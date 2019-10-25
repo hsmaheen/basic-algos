@@ -26,6 +26,16 @@
       "windows": {
         "program": "${workspaceFolder}/exercises/node_modules/jest/bin/ts-jest"
       }
+    },
+    {
+      "name": "Current TS File",
+      "type": "node",
+      "request": "launch",
+      "args": ["${relativeFile}"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector"
     }
   ]
 }

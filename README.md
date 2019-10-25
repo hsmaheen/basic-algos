@@ -1,3 +1,3 @@
-# AlgoCasts
+# Basic Algorithms
 
-Companion repo to a course on Udemy.com
+This contains basic interview questions with tests

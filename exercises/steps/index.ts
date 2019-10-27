@@ -25,9 +25,11 @@ export function steps(n) {
       if (col <= row) {
         stair = stair + "#";
       } else {
-        stair = stair + " ";
+        stair = stair + "*";
       }
     }
     console.log(stair);
   }
 }
+
+steps(3);

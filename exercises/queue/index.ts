@@ -7,7 +7,17 @@
 //     const q = new Queue();
 //     q.add(1);
 //     q.remove(); // returns 1;
+export class Queue {
+  data: any[];
+  constructor() {
+    this.data = [];
+  }
 
-class Queue {}
+  add(record) {
+    this.data.unshift(record);
+  }
 
-module.exports = Queue;
+  remove() {
+    return this.data.pop();
+  }
+}

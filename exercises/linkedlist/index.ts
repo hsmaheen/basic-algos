@@ -145,4 +145,52 @@ export class LinkedList {
     }
     */
   }
+
+  insertAt(data: any, index: number) {
+    const newNode = new Node(data);
+    if (index === 0) {
+      const nextNode = this.head;
+      if (nextNode) {
+        this.head = newNode;
+        newNode.next = nextNode;
+      } else {
+        this.head = newNode;
+      }
+      return;
+    }
+    if (index > 0) {
+      const nodeToAttachTo = this.getAt(index - 1);
+      if (!nodeToAttachTo) {
+        const lastNode = this.getLast();
+        lastNode.next = newNode;
+        return;
+      }
+      const nodeToMove = nodeToAttachTo.next;
+      nodeToAttachTo.next = newNode;
+      newNode.next = nodeToMove;
+    }
+
+    // const newNode = new Node(data);
+    // if (index === 0) {
+    //   const nextNode = this.head;
+    //   if (nextNode) {
+    //     this.head = newNode;
+    //     newNode.next = nextNode;
+    //   } else {
+    //     this.head = newNode;
+    //   }
+    //   return;
+    // }
+    // if (index > 0) {
+    //   const nodeToAttachTo = this.getAt(index - 1);
+    //   if (!nodeToAttachTo) {
+    //     const lastNode = this.getLast();
+    //     lastNode.next = newNode;
+    //     return;
+    //   }
+    //   const nodeToMove = nodeToAttachTo.next;
+    //   nodeToAttachTo.next = newNode;
+    //   newNode.next = nodeToMove;
+    // }
+  }
 }

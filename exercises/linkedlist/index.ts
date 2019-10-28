@@ -146,10 +146,3 @@ export class LinkedList {
     */
   }
 }
-
-const l = new LinkedList();
-l.insertLast(1);
-l.insertLast(2);
-l.insertLast(3);
-l.insertLast(4);
-l.removeAt(0);

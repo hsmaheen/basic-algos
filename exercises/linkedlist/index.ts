@@ -91,8 +91,65 @@ export class LinkedList {
     //   }
     // }
   }
+
+  insertLast(data) {
+    const newNode: Node = {
+      data: data,
+      next: null
+    };
+    const node = this.getLast();
+    if (node) {
+      node.next = newNode;
+    } else {
+      this.head = newNode;
+    }
+  }
+
+  getAt(index: number) {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      node = node.next;
+      counter++;
+    }
+    return null;
+  }
+
+  removeAt(index: number) {
+    if (!this.head) {
+      return;
+    }
+    if (index === 0) {
+      this.head = this.head.next;
+    } else if (index > 0) {
+      const prevNode = this.getAt(index - 1);
+      if (!prevNode || !prevNode.next) {
+        return;
+      }
+      prevNode.next = prevNode.next ? prevNode.next.next : null;
+    }
+
+    /*
+    alternate solution
+    if (index >= 0) {
+      if (index === 0) {
+        this.head = this.head ? this.head.next : null;
+      }
+      const node = this.getAt(index - 1);
+      if (node) {
+        node.next = node.next ? node.next.next : null;
+      }
+    }
+    */
+  }
 }
 
 const l = new LinkedList();
-l.insertFirst("a");
-l.removeLast();
+l.insertLast(1);
+l.insertLast(2);
+l.insertLast(3);
+l.insertLast(4);
+l.removeAt(0);

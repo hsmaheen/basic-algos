@@ -115,110 +115,110 @@ describe("RemoveLast", () => {
     expect(l.head).toEqual(null);
   });
 
-  // test("RemoveLast removes the last node when list is length 2", () => {
-  //   const l = new List();
-  //   l.insertFirst("b");
-  //   l.insertFirst("a");
+  test("RemoveLast removes the last node when list is length 2", () => {
+    const l = new List();
+    l.insertFirst("b");
+    l.insertFirst("a");
 
-  //   l.removeLast();
+    l.removeLast();
 
-  //   expect(l.size()).toEqual(1);
-  //   expect(l.head.data).toEqual("a");
-  // });
+    expect(l.size()).toEqual(1);
+    expect(l.head.data).toEqual("a");
+  });
 
-  // test("RemoveLast removes the last node when list is length 3", () => {
-  //   const l = new List();
-  //   l.insertFirst("c");
-  //   l.insertFirst("b");
-  //   l.insertFirst("a");
-  //   l.removeLast();
+  test("RemoveLast removes the last node when list is length 3", () => {
+    const l = new List();
+    l.insertFirst("c");
+    l.insertFirst("b");
+    l.insertFirst("a");
+    l.removeLast();
 
-  //   expect(l.size()).toEqual(2);
-  //   expect(l.getLast().data).toEqual("b");
-  // });
+    expect(l.size()).toEqual(2);
+    expect(l.getLast().data).toEqual("b");
+  });
 });
 
-// describe.skip("InsertLast", () => {
-//   test("adds to the end of the list", () => {
-//     const l = new List();
-//     l.insertFirst("a");
+describe("InsertLast", () => {
+  test("adds to the end of the list", () => {
+    const l = new List();
+    l.insertFirst("a");
 
-//     l.insertLast("b");
+    l.insertLast("b");
 
-//     expect(l.size()).toEqual(2);
-//     expect(l.getLast().data).toEqual("b");
-//   });
-// });
+    expect(l.size()).toEqual(2);
+    expect(l.getLast().data).toEqual("b");
+  });
+});
 
-// describe.skip("GetAt", () => {
-//   test("returns the node at given index", () => {
-//     const l = new List();
-//     expect(l.getAt(10)).toEqual(null);
+describe("GetAt", () => {
+  test("returns the node at given index", () => {
+    const l = new List();
 
-//     l.insertLast(1);
-//     l.insertLast(2);
-//     l.insertLast(3);
-//     l.insertLast(4);
+    l.insertLast(1);
+    l.insertLast(2);
+    l.insertLast(3);
+    l.insertLast(4);
 
-//     expect(l.getAt(0).data).toEqual(1);
-//     expect(l.getAt(1).data).toEqual(2);
-//     expect(l.getAt(2).data).toEqual(3);
-//     expect(l.getAt(3).data).toEqual(4);
-//   });
-// });
+    expect(l.getAt(0).data).toEqual(1);
+    expect(l.getAt(1).data).toEqual(2);
+    expect(l.getAt(2).data).toEqual(3);
+    expect(l.getAt(3).data).toEqual(4);
+    //expect(l.getAt(10)).toEqual(null);
+  });
+});
 
-// describe.skip("RemoveAt", () => {
-//   test("removeAt doesnt crash on an empty list", () => {
-//     const l = new List();
-//     expect(() => {
-//       l.removeAt(0);
-//       l.removeAt(1);
-//       l.removeAt(2);
-//     }).not.toThrow();
-//   });
+describe("RemoveAt", () => {
+  test("removeAt doesnt crash on an empty list", () => {
+    const l = new List();
+    expect(() => {
+      l.removeAt(0);
+      l.removeAt(1);
+      l.removeAt(2);
+    }).not.toThrow();
+  });
 
-//   test("removeAt doesnt crash on an index out of bounds", () => {
-//     const l = new List();
-//     expect(() => {
-//       const l = new List();
-//       l.insertFirst("a");
-//       l.removeAt(1);
-//     }).not.toThrow();
-//   });
+  test("removeAt doesnt crash on an index out of bounds", () => {
+    const l = new List();
+    expect(() => {
+      const l = new List();
+      l.insertFirst("a");
+      l.removeAt(1);
+    }).not.toThrow();
+  });
 
-//   test("removeAt deletes the first node", () => {
-//     const l = new List();
-//     l.insertLast(1);
-//     l.insertLast(2);
-//     l.insertLast(3);
-//     l.insertLast(4);
-//     expect(l.getAt(0).data).toEqual(1);
-//     l.removeAt(0);
-//     expect(l.getAt(0).data).toEqual(2);
-//   });
+  test("removeAt deletes the first node", () => {
+    const l = new List();
+    l.insertLast(1);
+    l.insertLast(2);
+    l.insertLast(3);
+    l.insertLast(4);
+    expect(l.getAt(0).data).toEqual(1);
+    l.removeAt(0);
+    expect(l.getAt(0).data).toEqual(2);
+  });
 
-//   test("removeAt deletes the node at the given index", () => {
-//     const l = new List();
-//     l.insertLast(1);
-//     l.insertLast(2);
-//     l.insertLast(3);
-//     l.insertLast(4);
-//     expect(l.getAt(1).data).toEqual(2);
-//     l.removeAt(1);
-//     expect(l.getAt(1).data).toEqual(3);
-//   });
+  test("removeAt deletes the node at the given index", () => {
+    const l = new List();
+    l.insertLast(1);
+    l.insertLast(2);
+    l.insertLast(3);
+    l.insertLast(4);
+    expect(l.getAt(1).data).toEqual(2);
+    l.removeAt(1);
+    expect(l.getAt(1).data).toEqual(3);
+  });
 
-//   test("removeAt works on the last node", () => {
-//     const l = new List();
-//     l.insertLast(1);
-//     l.insertLast(2);
-//     l.insertLast(3);
-//     l.insertLast(4);
-//     expect(l.getAt(3).data).toEqual(4);
-//     l.removeAt(3);
-//     expect(l.getAt(3)).toEqual(null);
-//   });
-// });
+  test("removeAt works on the last node", () => {
+    const l = new List();
+    l.insertLast(1);
+    l.insertLast(2);
+    l.insertLast(3);
+    l.insertLast(4);
+    expect(l.getAt(3).data).toEqual(4);
+    l.removeAt(3);
+    expect(l.getAt(3)).toEqual(null);
+  });
+});
 
 // describe.skip("InsertAt", () => {
 //   test("inserts a new node with data at the 0 index when the list is empty", () => {

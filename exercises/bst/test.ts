@@ -1,10 +1,12 @@
-const Node = require('./index');
+import { Node } from ".";
 
-test('Node is a constructor', () => {
-  expect(typeof Node.prototype.constructor).toEqual('function');
+import {} from "ts-jest";
+
+test("Node is a constructor", () => {
+  expect(typeof Node.prototype.constructor).toEqual("function");
 });
 
-test('Node can insert correctly', () => {
+test("Node can insert correctly", () => {
   const node = new Node(10);
   node.insert(5);
   node.insert(15);
@@ -15,7 +17,7 @@ test('Node can insert correctly', () => {
   expect(node.right.right.data).toEqual(17);
 });
 
-test('Contains returns node with the same data', () => {
+test("Contains returns node with the same data", () => {
   const node = new Node(10);
   node.insert(5);
   node.insert(15);
@@ -28,7 +30,7 @@ test('Contains returns node with the same data', () => {
   expect(node.contains(3)).toEqual(three);
 });
 
-test('Contains returns null if value not found', () => {
+test("Contains returns null if value not found", () => {
   const node = new Node(10);
   node.insert(5);
   node.insert(15);

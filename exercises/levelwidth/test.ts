@@ -1,11 +1,12 @@
-const Node = require('./node');
-const levelWidth = require('./index');
+import { levelWidth } from "./index";
+import { Node } from "./node";
+import {} from "ts-jest";
 
-test('levelWidth is a function', () => {
-  expect(typeof levelWidth).toEqual('function');
+test("levelWidth is a function", () => {
+  expect(typeof levelWidth).toEqual("function");
 });
 
-test('levelWidth returns number of nodes at widest point', () => {
+test("levelWidth returns number of nodes at widest point", () => {
   const root = new Node(0);
   root.add(1);
   root.add(2);
@@ -16,7 +17,7 @@ test('levelWidth returns number of nodes at widest point', () => {
   expect(levelWidth(root)).toEqual([1, 3, 2]);
 });
 
-test('levelWidth returns number of nodes at widest point', () => {
+test("levelWidth returns number of nodes at widest point", () => {
   const root = new Node(0);
   root.add(1);
   root.children[0].add(2);

@@ -1,11 +1,14 @@
-class Node {
+export class Node {
+  data: any;
+  next: any;
   constructor(data, next = null) {
     this.data = data;
     this.next = next;
   }
 }
 
-class LinkedList {
+export class LinkedList {
+  head: Node;
   constructor(values = []) {
     this.head = null;
 
@@ -154,25 +157,23 @@ class LinkedList {
     }
   }
 
-  forEach(fn) {
-    if (!this.head) {
-      return null;
-    }
+  // forEach(fn) {
+  //   if (!this.head) {
+  //     return null;
+  //   }
 
-    let node = this.head;
-    while (node) {
-      fn(node);
-      node = node.next;
-    }
-  }
+  //   let node = this.head;
+  //   while (node) {
+  //     fn(node);
+  //     node = node.next;
+  //   }
+  // }
 
-  *[Symbol.iterator]() {
-    let node = this.head;
-    while (node) {
-      yield node;
-      node = node.next;
-    }
-  }
+  // *[Symbol.iterator]() {
+  //   let node = this.head;
+  //   while (node) {
+  //     yield node;
+  //     node = node.next;
+  //   }
+  // }
 }
-
-module.exports = { Node, LinkedList };

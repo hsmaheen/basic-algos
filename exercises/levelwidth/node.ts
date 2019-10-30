@@ -1,4 +1,6 @@
-module.exports = class Node {
+export class Node {
+  data: any;
+  children: Node[];
   constructor(data) {
     this.data = data;
     this.children = [];
@@ -7,4 +9,4 @@ module.exports = class Node {
   add(data) {
     this.children.push(new Node(data));
   }
-};
+}

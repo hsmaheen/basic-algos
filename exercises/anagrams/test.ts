@@ -1,4 +1,4 @@
-import { anagrams } from ".";
+import { anagrams } from "./index";
 
 import {} from "ts-jest";
 

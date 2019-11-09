@@ -5,26 +5,26 @@
       "type": "node",
       "request": "launch",
       "name": "Jest All",
-      "program": "${workspaceFolder}/exercises/node_modules/.bin/ts-jest",
+      "program": "${workspaceFolder}/node_modules/.bin/ts-jest",
       "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {
-        "program": "${workspaceFolder}/exercises/node_modules/jest/bin/ts-jest"
+        "program": "${workspaceFolder}/node_modules/jest/bin/ts-jest"
       }
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Jest Current File",
-      "program": "${workspaceFolder}/exercises/node_modules/.bin/ts-jest",
+      "program": "${workspaceFolder}/node_modules/.bin/ts-jest",
       "args": ["${fileBasenameNoExtension}", "--config", "jest.config.js"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {
-        "program": "${workspaceFolder}/exercises/node_modules/jest/bin/ts-jest"
+        "program": "${workspaceFolder}/node_modules/jest/bin/ts-jest"
       }
     },
     {

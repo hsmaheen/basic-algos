@@ -22,20 +22,36 @@ class Graph {
 
   removeVertex(v1) {
     while (this.adjacentList[v1].length > 0) {
-      const edge = this.adjacentList[v1].shift();
-      this.removeEdge(v1, edge);
+      const adjacentVertex = this.adjacentList[v1].pop();
+      this.removeEdge(v1, adjacentVertex);
     }
     delete this.adjacentList[v1];
   }
 }
 
-const graph = new Graph();
-graph.addVertex("Tokyo");
-graph.addVertex("New York");
-graph.addVertex("London");
-graph.addEdge("London", "New York");
-graph.addEdge("Tokyo", "London");
-graph.addEdge("Tokyo", "New York");
-graph.removeEdge("Tokyo", "New York");
-graph.removeVertex("Tokyo");
-console.log("====>", graph.adjacentList);
+// const graph = new Graph();
+// graph.addVertex("Tokyo");
+// graph.addVertex("New York");
+// graph.addVertex("London");
+// graph.addEdge("London", "New York");
+// graph.addEdge("Tokyo", "London");
+// graph.addEdge("Tokyo", "New York");
+// graph.removeEdge("Tokyo", "New York");
+// graph.removeVertex("Tokyo");
+
+const g = new Graph();
+g.addVertex("A");
+g.addVertex("B");
+g.addVertex("C");
+g.addVertex("D");
+g.addVertex("E");
+g.addVertex("F");
+
+g.addEdge("A", "B");
+g.addEdge("A", "C");
+g.addEdge("B", "D");
+g.addEdge("C", "E");
+g.addEdge("D", "E");
+g.addEdge("D", "F");
+g.addEdge("E", "F");
+console.log("====>", g.adjacentList);

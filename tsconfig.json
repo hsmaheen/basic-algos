@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
+    "lib": ["es6", "dom", "es2017"],
     "allowJs": true,
     "target": "es6"
   }

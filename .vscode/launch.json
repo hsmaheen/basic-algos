@@ -2,13 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Jest All",
       "program": "${workspaceFolder}/node_modules/.bin/ts-jest",
-      "args": [
-        "--runInBand"
-      ],
+      "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
@@ -53,7 +68,7 @@
           "--runInBand",
           "--config",
           "${workspaceRoot}/jest.config.json"
-        ],
+        ]
       },
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
@@ -63,9 +78,7 @@
       "request": "launch",
       "name": "Jest Current Type File",
       "program": "${workspaceRoot}/node_modules/.bin/ts-jest",
-      "args": [
-        "${relativeFile}"
-      ],
+      "args": ["${relativeFile}"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
@@ -87,14 +100,8 @@
       "name": "Current TS File",
       "type": "node",
       "request": "launch",
-      "args": [
-        "${relativeFile}"
-      ],
-      "runtimeArgs": [
-        "--nolazy",
-        "-r",
-        "ts-node/register"
-      ],
+      "args": ["${relativeFile}"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
       "protocol": "inspector"

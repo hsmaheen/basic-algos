@@ -78,9 +78,10 @@ trieNew.addWord('forget');
 trieNew.addWord('awesome');
 trieNew.addWord('argue');
 trieNew.addWord('f');
-// console.log(trieNew.getStrings());
-// console.log(trieNew.findSequence('fat'));
-// console.log(trieNew.findWord('fat'));
-console.log(trieNew.autoComplete('fa'));
+
+console.log(trieNew.getStrings());
+//console.log(trieNew.findSequence('fat'));
+//console.log(trieNew.findWord('fat'));
+console.log(trieNew.autoComplete('fat'));
 
 //console.log(JSON.stringify(trieNew));

@@ -1,6 +1,6 @@
 import { Node } from ".";
 
-import {} from "ts-jest";
+import { } from "ts-jest";
 
 test("Node is a constructor", () => {
   expect(typeof Node.prototype.constructor).toEqual("function");

@@ -1,5 +1,5 @@
 import { palindrome } from "./index";
-import {} from "ts-jest";
+import { } from 'ts-jest';
 
 test("palindrome function is defined", () => {
   expect(typeof palindrome).toEqual("function");

@@ -13,7 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.7.7",
     "jest": "^24.9.0",
+    "performance-now": "^2.1.0",
+    "random-name": "^0.1.2",
     "ts-jest": "^24.3.0"
   },
   "devDependencies": {

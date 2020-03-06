@@ -4,27 +4,13 @@ namespace CTrie
 {
     class SuffixTrieNode
     {
-        static int MAX_CHAR = 256;
-
-        public SuffixTrieNode[] children = new SuffixTrieNode[MAX_CHAR];
-        public List<string> names;
-
-        public SuffixTrieNode() // Constructor 
-        {
-            // Create an empty linked list for indexes of 
-            // suffixes starting from this node 
-            names = new List<string>();
-
-            // Initialize all child pointers as NULL 
-            for (int i = 0; i < MAX_CHAR; i++)
-                children[i] = null;
-        }
+        Dictionary<Char, SuffixTrieNode> children = new Dictionary<char, SuffixTrieNode>(1);
+        public List<string> names = new List<string>();
 
         // A recursive function to insert a suffix of 
         // the text in subtree rooted with this node 
         public void insertSuffix(String s, string name)
         {
-
             // Store index in linked list 
             names.Add(name);
 
@@ -33,16 +19,19 @@ namespace CTrie
             {
 
                 // Find the first character 
-                char cIndex = s[0];
+                char firstChar = s[0];
 
                 // If there is no edge for this character, 
                 // add a new edge 
-                if (children[cIndex] == null)
-                    children[cIndex] = new SuffixTrieNode();
+                if (children.ContainsKey(firstChar) == false)
+                    children.Add(firstChar, new SuffixTrieNode());
 
                 // Recur for next suffix 
-                children[cIndex].insertSuffix(s.Substring(1),
-                                                name);
+                if (children.TryGetValue(firstChar, out var leaf))
+                {
+                    leaf.insertSuffix(s.Substring(1), name);
+
+                }
             }
         }
 
@@ -61,11 +50,10 @@ namespace CTrie
 
             // if there is an edge from the current node of 
             // suffix tree, follow the edge. 
-            if (children[s[0]] != null)
-                return (children[s[0]]).search(s.Substring(1));
-
-            // If there is no edge, pattern doesnt exist in 
-            // text 
+            if (children.TryGetValue(s[0], out var leaf))
+            {
+                return leaf.search(s.Substring(1));
+            }
             else
                 return null;
         }
@@ -96,7 +84,6 @@ namespace CTrie
         {
 
             Dictionary<string, bool> hashMap = new Dictionary<string, bool>();
-            bool value = true;
 
 
 
@@ -116,7 +103,7 @@ namespace CTrie
 
                 foreach (string name in result)
                 {
-                    if (hashMap.TryGetValue(name, out value)) continue;
+                    if (hashMap.ContainsKey(name)) continue;
                     hashMap.Add(name, true);
                     Console.WriteLine("The Resultant word is " + (name));
 
